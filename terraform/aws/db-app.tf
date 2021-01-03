@@ -2,9 +2,13 @@ resource "aws_db_instance" "default" {
   name                   = var.dbname
   engine                 = "mysql" 
   option_group_name      = aws_db_option_group.default.name
+  
+  
   parameter_group_name   = aws_db_parameter_group.default.name
   db_subnet_group_name   = aws_db_subnet_group.default.name
   vpc_security_group_ids = ["${aws_security_group.default.id}"]
+  
+  
 
   identifier              = "rds-${local.resource_prefix.value}"
   engine_version          = "8.0" # Latest major version 
@@ -53,6 +57,8 @@ resource "aws_db_parameter_group" "default" {
     value        = "utf8"
     apply_method = "immediate"
   }
+  
+  
 
   parameter {
     name         = "character_set_server"
@@ -86,6 +92,9 @@ resource "aws_security_group" "default" {
     Environment = local.resource_prefix.value
   }
 }
+
+
+
 
 resource "aws_security_group_rule" "ingress" {
   type              = "ingress"
@@ -343,10 +352,33 @@ output "db_app_public_dns" {
   value       = aws_instance.db_app.public_dns
 }
 
+
+
 output "db_endpoint" {
   description = "DB Endpoint"
   value       = aws_db_instance.default.endpoint
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
