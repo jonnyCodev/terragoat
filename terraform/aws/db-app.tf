@@ -5,6 +5,8 @@ resource "aws_db_instance" "default" {
   parameter_group_name   = aws_db_parameter_group.default.name
   db_subnet_group_name   = aws_db_subnet_group.default.name
   vpc_security_group_ids = ["${aws_security_group.default.id}"]
+  
+  
 
   identifier              = "rds-${local.resource_prefix.value}"
   engine_version          = "8.0" # Latest major version 
