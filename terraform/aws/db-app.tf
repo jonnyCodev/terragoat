@@ -91,6 +91,9 @@ resource "aws_security_group" "default" {
   }
 }
 
+
+
+
 resource "aws_security_group_rule" "ingress" {
   type              = "ingress"
   from_port         = "3306"
