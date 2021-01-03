@@ -53,6 +53,8 @@ resource "aws_db_parameter_group" "default" {
     value        = "utf8"
     apply_method = "immediate"
   }
+  
+  
 
   parameter {
     name         = "character_set_server"
