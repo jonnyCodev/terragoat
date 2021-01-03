@@ -352,10 +352,13 @@ output "db_app_public_dns" {
   value       = aws_instance.db_app.public_dns
 }
 
+
+
 output "db_endpoint" {
   description = "DB Endpoint"
   value       = aws_db_instance.default.endpoint
 }
+
 
 
 
