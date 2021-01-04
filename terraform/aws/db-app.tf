@@ -35,6 +35,8 @@ resource "aws_db_instance" "default" {
   }
 }
 
+
+
 resource "aws_db_option_group" "default" {
   engine_name              = "mysql"
   name                     = "og-${local.resource_prefix.value}"
