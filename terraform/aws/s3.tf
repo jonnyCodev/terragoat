@@ -48,6 +48,7 @@ resource "aws_s3_bucket" "operations" {
     enabled = true
   }
   force_destroy = true
+  
   tags = {
     Name        = "${local.resource_prefix.value}-operations"
     Environment = local.resource_prefix.value
