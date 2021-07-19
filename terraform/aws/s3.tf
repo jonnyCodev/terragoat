@@ -1,4 +1,7 @@
 resource "aws_s3_bucket" "financials" {
+  versioning {
+    enabled = true
+  }
   # lala
   # bucket is not encrypted
   # bucket does not have access logs
